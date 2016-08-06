@@ -1,0 +1,523 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica;
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+}
+
+.Button {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  background: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #000;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  border: 3px solid #000;
+  height: 50px;
+  padding: 0 30px;
+  transition: background .2s, color .2s;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.Button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.Button--login {
+  width: 300px;
+  height: 65px;
+  border: 4px solid #000;
+  color: #000;
+  line-height: 57px;
+}
+
+.Bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #AD6BFF, #74BCF7);
+  height: 100vh;
+  width: 100vw;
+}
+
+.Input {
+  position: relative;
+  background: #fff;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: auto;
+  z-index: 1;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.Input:after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #AD6BFF, #74BCF7);
+}
+
+.Input-label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  opacity: 0.3;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.Input-input {
+  display: block;
+  font-size: 18px;
+  height: 40px;
+  border: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.Index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Index-form {
+  padding: 20px;
+  background: #fff;
+  position: relative;
+}
+
+.Index-form .Input + .Input {
+  margin-top: 15px;
+}
+
+.Index-form .Button {
+  margin-top: 30px;
+}
+
+.Player {
+
+}
+
+.Player-content {
+  width: 75vw;
+}
+
+.Player-miniPlayer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 25vw;
+  height: 100vh;
+  padding: 30px 30px 0;
+  background: linear-gradient(135deg, #AD6BFF, #74BCF7);
+  display: flex;
+  flex-direction: column;
+  transition: transform .4s ease-out;
+}
+
+.Player-miniPlayer.isVisible {
+  transform: translateX(0);
+}
+
+.Player-miniPlayer.isNotVisible {
+  transform: translateX(100%);
+}
+
+.Album {
+  position: relative;
+}
+
+.Album img {
+  width: 300px;
+  height: 300px;
+  display: block;
+  box-shadow: 0 35px 60px rgba(0,0,0,.15);
+  margin-bottom: 58px;
+  object-fit: cover;
+}
+
+.Album-artist {
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.Album-title {
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  opacity: .5;
+  margin-bottom: 20px;
+}
+
+.TrackList {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  flex: 1 0 0;
+  overflow: auto;
+  margin: 0;
+}
+
+.Track {
+  color: #000;
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.Track-left {
+  display: flex;
+}
+
+.Track-number {
+  margin-right: 5px;
+}
+
+.Track-duration {
+  opacity: .75;
+}
+
+.Contact {
+    display: flex;
+    align-items: flex-end;
+}
+
+.Contact + .Contact {
+  margin-top: 15px;
+}
+
+.Profile {
+  padding: 40px;
+}
+
+.Profile-contacts {
+  padding: 0;
+}
+
+.Profile .Textarea {
+  margin-top: 15px;
+}
+
+.Textarea {
+  position: relative;
+  width: 300px;
+}
+
+.Textarea:after {
+  content: ' ';
+  position: absolute;
+  top: 18px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #AD6BFF, #74BCF7);
+  z-index: 1;
+}
+
+.Textarea:before {
+  content: ' ';
+  position: absolute;
+  top: 21px;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  background: #fff;
+  z-index: 2;
+}
+
+.Textarea-label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  opacity: 0.3;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.Textarea-input {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  height: 150px;
+  border: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  resize: none;
+  z-index: 3;
+  background: none;
+  padding: 10px;
+}
+
+.Nav {
+  height: 60px;
+  width: 100%;
+  background: linear-gradient(135deg, #AD6BFF, #74BCF7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  letter-spacing: 1px;
+}
+
+.Nav-link {
+  height: 40px;
+  padding: 0 40px;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0;
+  border: 3px solid transparent;
+  margin-right: 20px;
+  color: #fff;
+  line-height: 37px;
+}
+
+.Nav-link.isActive {
+    border: 3px solid #fff;
+}
+
+.Search {
+  padding: 20px;
+}
+
+.Search-input {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Search-results {
+
+}
+
+.AlbumItem {
+  position: relative;
+  width: 20%;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0;
+  padding: 2px;
+}
+
+.AlbumItem:nth-child(5n) {
+  margin-right: 0;
+}
+
+.AlbumItem img {
+  width: 100%;
+}
+
+.AlbumItem div {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  transform: translateY(-70%);
+  display: block;
+  margin: auto;
+  line-height: 18px;
+  opacity: 0;
+  transition: opacity .4s, transform .4s;
+  color: #fff;
+  z-index: 2;
+}
+
+.AlbumItem:hover div {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.AlbumItem:after {
+  content: ' ';
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  background: #000;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 1;
+}
+
+.AlbumItem:hover:after {
+  opacity: .5;
+}
+
+.ArtistItem {
+  position: relative;
+  width: 20%;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0;
+  padding: 2px;
+}
+
+.ArtistItem:nth-child(5n) {
+  margin-right: 0;
+}
+
+.ArtistItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ArtistItem div {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  transform: translateY(-70%);
+  display: block;
+  margin: auto;
+  line-height: 18px;
+  opacity: 0;
+  transition: opacity .4s, transform .4s;
+  color: #fff;
+  z-index: 2;
+}
+
+.ArtistItem:hover div {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.ArtistItem:after {
+  content: ' ';
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  background: #000;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 1;
+}
+
+.ArtistItem:hover:after {
+  opacity: .5;
+}
+
+.Search-albums {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Search-artists {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.Artist {
+  padding: 20px;
+}
+
+.Artist-albums {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Artist-info {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Artist-cover {
+  width: 300px;
+  height: 300px;
+  margin-right: 20px;
+}
+
+.Artist-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Artist-title {
+  margin: 0;
+}
+
+.AlbumContainer {
+  padding: 20px;
+}
+
+.Album-btn {
+  position: absolute;
+  top: 285px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.Album-btn--stop {
+  width: 30px;
+  height: 30px;
+  background: #007bff;
+  left: 130px;
+    display: none;
+}
+
+.Album-btn--play {
+  left: 130px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 26.0px;
+  border-color: transparent transparent transparent #007bff;
+}
