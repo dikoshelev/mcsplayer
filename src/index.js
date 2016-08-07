@@ -11,6 +11,7 @@ import MainContainer from './containers/MainContainer'
 import SearchContainer from './containers/SearchContainer'
 import ArtistContainer from './containers/ArtistContainer'
 import AlbumContainer from './containers/AlbumContainer'
+import PlaylistContainer from './containers/PlaylistContainer'
 
 ReactDOM.render((
   <Router history={browserHistory}>
@@ -22,6 +23,7 @@ ReactDOM.render((
         <Route path="artist(/:id)" component={ArtistContainer}/>
       </Route>
       <Route path="/profile/" component={ProfileContainer} />
+      <Route path="/playlist/" component={PlaylistContainer} />
     </Route>
   </Router>
 ), document.getElementById('app'));

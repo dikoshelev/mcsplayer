@@ -37,6 +37,10 @@ class AlbumContainer extends Component {
     return axios.get('https://api.spotify.com/v1/albums/' + this.props.params.id + '/tracks/')
   }
 
+  postTrack(id) {
+    axios.post('/api/favorites', {spotifyId:id})
+  }
+
   loadData() {
     axios.all([this.getAlbumData(), this.getTracksData()])
       .then(axios.spread((album, tracks) => {
@@ -147,7 +151,9 @@ class AlbumContainer extends Component {
             artWork={this.state.album.artWork}
             onPauseTrack={this.handlePause.bind(this)}
             onMuteTrack={this.handleMute.bind(this)}/>
-          <TrackList tracks={this.state.tracks} onPlayTrack={this.handlePlayTrack.bind(this)}/>
+          <TrackList tracks={this.state.tracks}
+          onPlayTrack={this.handlePlayTrack.bind(this)}
+          postTrackId={this.postTrack.bind(this)}/>
         </div>
       )
     } else {
