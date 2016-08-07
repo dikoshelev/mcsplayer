@@ -39,6 +39,6 @@ app.get('*', function(req, res){
   res.sendFile('build/index.html', {root: __dirname})
 })
 
-app.listen(8000, function() {
+app.listen(80, function() {
   console.log('server started on port 8000');
 })
