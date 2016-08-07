@@ -29,7 +29,7 @@ class PlaylistContainer extends Component {
   getTracksData() {
     let spotifyIds = []
 
-    return axios.get('http://localhost:8000/api/favorites/')
+    return axios.get('/api/favorites/')
     .then(function(response) {
       for (let track of response.data) {
         console.log(track)
